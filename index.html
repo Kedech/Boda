@@ -1185,10 +1185,14 @@
         // event.target.playVideo();
       }
 
-      // Pausar video
-      function pauseVideo() {
-        player.pauseVideo();
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING) {
+          isPlaying = true;
+        } else {
+          isPlaying = false;
+        }
       }
+
       // Click en controlador musica
       $('body').on('click', '#play-pause-music', function(e) {
 
@@ -1201,14 +1205,15 @@
         if (estadoMusic == 'pause') {
           $(this).attr('data-estado-music', 'play');
           animMusicAnimIcon.play();
+          isPlaying = true;
           player.playVideo();
-
         }
 
         // Play music
         if (estadoMusic == 'play') {
           $(this).attr('data-estado-music', 'pause');
           player.pauseVideo();
+          isPlaying = false;
           animMusicAnimIcon.stop();
         }
 
