@@ -923,174 +923,65 @@
     </div>
   </div>
 </div>
-    <!-- Modal mapa-->
-    <div id="modalMapa" class="modal fade" tabindex="-1">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
 
-      <div class="img-top-modal d-flex justify-content-center align-items-start">
-
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-
+  <!-- Modal mapa-->
+  <div id="modalMapa" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="img-top-modal d-flex justify-content-center align-items-start">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-header">
+          <h5 class="modal-title"></h5>
+        </div>
+        <div class="modal-body">
+          <div id="googleMap"></div>
+        </div>
+        <div class="modal-footer">
+          <a class="boton ampliar-mapa" target="_blank" href="#">Ampliar mapa</a>
+        </div>
       </div>
-
-
-      <div class="modal-header">
-
-        <h5 class="modal-title"></h5>
-
-      </div>
-
-      <div class="modal-body">
-        <div id="googleMap"></div>
-      </div>
-
-      <div class="modal-footer">
-        <a class="boton ampliar-mapa" target="_blank" href="#">Ampliar mapa</a>
-      </div>
-
-
     </div>
-  </div>
-</div>   
+  </div>   
 
 <!-- Muestro el banner si tiene parametro "banner" y si el modelo es visible en la web (para que tenga donde dirigir) -->
 
-    
-
-  
-
   <!-- Scripts -->
   <!-- Varaibles para JS desde config -->
-  <script src="js/index.js"></script>
-<script>
-  var _pathApp = "";
-
-  var _pathProducto = "";
-
-  var tokenProducto = "";
-
-
-  // Idioma
-  var langJs = "es";
-
-
-
-  // Idioma js en MODELO e INVITACION
-      var langJsVariante = "es-PE";
   
+  <script>
+    var _pathApp = "";
+    var _pathProducto = "";
+    var tokenProducto = "";
+      // Cuenta regresiva
+      var fechaCuentaRegresiva = "08/24/2024 11:30:00";
 
-  
+      // Mapas
+      var latitudFiesta = -12.025827;
+      var longitudFiesta = -77.267983;
+      var latitudCeremonia = -12.025827;
+      var longitudCeremonia = -77.267983;
 
-
-  
-
-    // Cuenta regresiva
-    var fechaCuentaRegresiva = "08/24/2024 11:30:00";
-
-    // Mapas
-    var latitudFiesta = -12.025827;
-    var longitudFiesta = -77.267983;
-    var latitudCeremonia = -12.025827;
-    var longitudCeremonia = -77.267983;
-
-    // Links Mapas
-    var linkMapsFiesta = "https://goo.gl/maps/2X8YUDGzTeUdmRpu8";
-    var linkMapsCeremonia = "https://maps.app.goo.gl/VLRrbpUgQCe5othMA";
-
-
+      // Links Mapas
+      var linkMapsFiesta = "https://goo.gl/maps/2X8YUDGzTeUdmRpu8";
+      var linkMapsCeremonia = "https://maps.app.goo.gl/VLRrbpUgQCe5othMA";
   </script>
-
-
-<!-- Idioma por defecto js -->
-<script>
-  var langDefault = 'es-PE';
-</script>
-
-
-
-<!-- // Consulto tipo de dispositivo -->
-<script>
-  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-
-    var device = 'mobile';
-  } else {
-    var device = 'desktop';
-  }
-</script>
-
-
-
-<!-- Funciones y varialbes globales -->
-<script>
-  // Funcion para validar formato url
-  function is_url(str) {
-    regexp = /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
-    if (regexp.test(str)) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-</script>
-
-
-
-<!-- Lottie -->
-<script src="https://www.fixdate.io/modelo-invitacion/24/js/lottie_svg.min.js"></script>
-<!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> -->
-<!-- <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script> -->
-
-
-
-<!-- Animacion loader -->
-<script>
-  let svgContainerLoader = document.querySelector('.loader');
-
-  let animLoader = bodymovin.loadAnimation({
-    wrapper: svgContainerLoader,
-    animType: 'svg',
-    loop: true,
-    path: "./animations/corazon.json"//_pathProducto + "img/corazon.json"
-  });
-</script>
-
-
-
-<!-- Soporte WEBP -->
-<script>
-  function support_format_webp() {
-    var elem = document.createElement('canvas');
-
-    if (!!(elem.getContext && elem.getContext('2d'))) {
-      // was able or not to get WebP representation
-      return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0;
-    } else {
-      // very old browser like IE 8, canvas not supported
-      return false;
-    }
-  }
-</script>
-
-
-
-
-<!-- Listado de js con version dinamica segun modificacion de archivo -->
-<script type='text/javascript' src='https://www.fixdate.io/modelo-invitacion/24/langs/js/es-PE.js?v=1678728702'></script>
-<script type='text/javascript' src='https://www.fixdate.io/modelo-invitacion/24/js/jquery-3.5.1.min.js?v=1678728680'></script>
-<script type='text/javascript' src='https://www.fixdate.io/modelo-invitacion/24/../../public/js/jquery.cookie.js?v=1645580925'></script>
-<script type='text/javascript' src='https://www.fixdate.io/modelo-invitacion/24/../../public/js/change-lang.js?v=1645580924'></script>
-<script type='text/javascript' src='https://www.fixdate.io/modelo-invitacion/24/js/waypoint/noframework.waypoints.min.js?v=1678728708'></script>
-<script type='text/javascript' src='https://www.fixdate.io/modelo-invitacion/24/js/parallax.min.js?v=1678728681'></script>
-<script type='text/javascript' src='https://www.fixdate.io/modelo-invitacion/24/js/popper.min.js?v=1678728682'></script>
-<script type='text/javascript' src='https://www.fixdate.io/modelo-invitacion/24/js/bootstrap.min.js?v=1678728680'></script>
-<script type='text/javascript' src='https://www.fixdate.io/modelo-invitacion/24/js/slick.min.js?v=1678728683'></script>
-<script type='text/javascript' src='https://www.fixdate.io/modelo-invitacion/24/js/jquery.fancybox.min.js?v=1678728681'></script>
-<script type='text/javascript' src='https://www.fixdate.io/modelo-invitacion/24/js/scripts.js?v=1678728682'></script>
-
-
+  <!-- Lottie -->
+  <script type='text/javascript' src="JS/lottie_svg.min.js"></script>
+  <!-- Listado de js con version dinamica segun modificacion de archivo -->
+  <script type='text/javascript' src='JS/jquery-3.5.1.min.js'></script>
+  <script type='text/javascript' src='JS/jquery.cookie.js'></script>
+  <!-- <script type='text/javascript' src='https://www.fixdate.io/modelo-invitacion/24/../../public/js/change-lang.js?v=1645580924'></script>-->
+  <script type='text/javascript' src='JS/waypoint/noframework.waypoints.min.js'></script>
+  <script type='text/javascript' src='JS/parallax.min.js'></script>
+  <script type='text/javascript' src='JS/popper.min.js'></script>
+  <script type='text/javascript' src='JS/bootstrap.min.js'></script>
+  <script type='text/javascript' src='JS/slick.min.js'></script>
+  <script type='text/javascript' src='JS/jquery.fancybox.min.js'></script>
+  <!-- <script type='text/javascript' src='https://www.fixdate.io/modelo-invitacion/24/js/scripts.js?v=1678728682'></script>-->
+  <script type='text/javascript' src="JS/index.js"></script>
 
 <!-- Loader -->
 <script>
