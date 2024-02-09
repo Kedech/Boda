@@ -1006,14 +1006,6 @@
 
   });
 </script>
-
-
-
-
-
-
-  
-
     
     <!-- Modal musica inicio -->
     
@@ -1094,22 +1086,18 @@
         var estadoMusic = $(this).attr('data-estado-music');
 
         // Pause music
-        if (estadoMusic == 'pause') {
+        if (estadoMusic == 'pause' || isPlaying == false) {
           $(this).attr('data-estado-music', 'play');
           animMusicAnimIcon.play();
-          isPlaying = true;
           player.playVideo();
         }
 
         // Play music
-        if (estadoMusic == 'play') {
+        if (estadoMusic == 'play' || isPlaying == true) {
           $(this).attr('data-estado-music', 'pause');
           player.pauseVideo();
-          isPlaying = false;
           animMusicAnimIcon.stop();
         }
-
-
       });
     </script>
 
