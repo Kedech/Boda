@@ -267,3 +267,42 @@
 
   animTips.play();
 //<!-- FIN Animacion Tips -->
+
+//<!-- Animacion canciones -->
+  let svgContainerFiesta = document.querySelector('.anim-fiesta');
+
+  let animFiesta = bodymovin.loadAnimation({
+    wrapper: svgContainerFiesta,
+    animType: 'svg',
+    loop: true,
+    path: "../animations/img_fiesta.json"//_pathProducto + "img/img_fiesta.json"
+  });
+
+  animFiesta.play();
+//<!--FIN Animacion canciones -->
+
+//<!-- Animacion regalos -->
+  let svgContainerRegalos = document.querySelector('.anim-regalos');
+
+  let animRegalos = bodymovin.loadAnimation({
+    wrapper: svgContainerRegalos,
+    animType: 'svg',
+    loop: true,
+    path: "../animations/img_iconoRegalos.json"//_pathProducto + "img/img_iconoRegalos.json"
+  });
+
+  animRegalos.play();
+//<!-- FIN Animacion regalos -->
+
+//<!-- Animacion instagram -->
+  let svgContainerInstagram = document.querySelector('.anim-instagram');
+
+  let animInstagram = bodymovin.loadAnimation({
+    wrapper: svgContainerInstagram,
+    animType: 'svg',
+    loop: true,
+    path: "../animations/img_iconoCompartimos.json"//_pathProducto + "img/img_iconoCompartimos.json"
+  });
+
+  animInstagram.play();
+//<!-- FIN Animacion instagram -->
