@@ -1,4 +1,3 @@
-@charset 'UTF-8';
 /* Slider */
 .slick-loading .slick-list
 {
@@ -13,7 +12,7 @@
     font-style: normal;
 
     src: url('../src/fonts/slick.eot');
-    src: url('../src/fonts/slick.eot') format('embedded-opentype'), url('../src/fonts/slick.woff') format('woff'), url('../src/fonts/slick.ttf') format('truetype'), url('../src/fonts/slick.svg') format('svg');
+    src: url('../src/fonts/slick.eot') format('embedded-opentype'), url('../src/fonts/slick.woff') format('woff'), url('../src/fonts/slick.ttf') format('truetype'), url('../src/fonts/slick.svg#slick') format('svg');
 }
 /* Arrows */
 .slick-prev,
@@ -88,11 +87,11 @@
 }
 .slick-prev:before
 {
-    content: 'â†';
+    content: url('../src/fonts/flecha-izq.svg');/*'â†';*/
 }
 [dir='rtl'] .slick-prev:before
 {
-    content: 'â†’';
+    content: url('../src/fonts/flecha-der.svg');/*'â†’';*/
 }
 
 .slick-next
@@ -181,14 +180,14 @@
     font-size: 6px;
     line-height: 20px;
 
-    position: absolute;
+    /*position: absolute;*/
     top: 0;
     left: 0;
 
     width: 20px;
     height: 20px;
 
-    content: 'â€¢';
+    content: url('../src/fonts/circle-solid.svg');/*'â€¢';*/
     text-align: center;
 
     opacity: .25;
